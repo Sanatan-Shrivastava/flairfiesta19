@@ -88,9 +88,14 @@
                             <p class="cover-date">
                                 TAGLINE
                             </p>
-                            <a href="register.html" class=" btn btn-primary btn-rounded" >
+                            <a href="" class=" btn btn-primary btn-rounded" button id="register" onclick="promptMe()">
                                 Register Yourself
                             </a>
+                            <script>
+                                function promptMe(){
+                                 var show  = alert("Registrations will begin soon, Thanks!");
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -116,7 +121,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-6 col-md-3  ">
                 <div class="icon_box_two">
                     <i class="ion-ios-location-outline"></i>
@@ -130,7 +134,19 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-6 col-md-3  ">
+                    <div class="icon_box_two">
+                        <i class="ion-ios-person-outline"></i>
+                        <div class="content">
+                            <h5 class="box_title">
+                                Contact Us
+                            </h5>
+                            <p>
+                                Contact Us at team@flairfiesta.in
+                            </p>
+                        </div>
+                    </div>
+                </div>
             <div class="col-6 col-md-3  ">
                 <div class="icon_box_two">
                     <i class="ion-ios-pricetag-outline"></i>
@@ -185,6 +201,7 @@
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -205,6 +222,9 @@
                         <td>
                             <a href="culevents.html" class="btn btn-primary btn-rounded">View All Events</a>
                         </td>
+                        <td class="buy_link">
+                                <a href="#">buy now</a>
+                            </td>
                     </tr>
                     <tr>
                             <td>
@@ -223,6 +243,9 @@
                             <td>
                                 <a href="Techevents.html" class="btn btn-primary btn-rounded">View all Events</a>
                             </td>
+                            <td class="buy_link">
+                                    <a href="#">buy now</a>
+                                </td>
                         </tr>
                     <tr>
                         <td>
@@ -241,6 +264,9 @@
                         <td>
                             <a href="artevents.html" class="btn btn-primary btn-rounded">View All Events</a>
                         </td>
+                        <td class="buy_link">
+                                <a href="#">buy now</a>
+                            </td>
                     </tr>
                     <tr>
                         <td>
@@ -259,6 +285,9 @@
                         <td>
                             <a href="#" class="btn btn-primary btn-rounded">View all Events</a>
                         </td>
+                        <td class="buy_link">
+                                <a href="#">buy now</a>
+                            </td>
                     </tr>
                     </tbody>
                 </table>
@@ -299,11 +328,24 @@
                 <div class="icon_box_one">
                     <i class="lnr lnr-bullhorn"></i>
                     <div class="content">
-                        <h4>prizes worth ₹1,50,000</h4>
+                        <h4>Loads of Prizes</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus
+                                For further queries, feel free to contact us at team@flairfiesta.in and we'll get back to you&nbsp;&nbsp;.
                         </p>
                         <a href="events.html">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                    <div class="icon_box_one">
+                        <i class="lnr lnr-clock"></i>
+                        <div class="content">
+                            <h4>Contact Us</h4>
+                            <p>
+                                For further queries, feel free to contact us at team@flairfiesta.in and we'll get back to you&nbsp;&nbsp;.
+                            </p>
+                            <a href="#">read more</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -326,7 +368,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s1.png" alt="speaker name">
+                    <img src="./src/images/rahul.png" width="100px" height="363px" alt="Rahul Tyagi">
                     <div class="info_box">
                         <h5 class="name">Rahul Tyagi</h5>
                         <p class="position">President</p>
@@ -337,7 +379,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s2.png" alt="speaker name">
+                    <img src="./src/images/saransh.jpg" height="363px" alt="Saransh Jain">
                     <div class="info_box">
                         <h5 class="name">Saransh Jain</h5>
                         <p class="position">General Secretary</p>
@@ -348,7 +390,7 @@
         <div class="col-md-3 col-sm-6">
                 <div class="speaker_box">
                     <div class="speaker_img">
-                        <img src="assets/img/speakers/s8.png" alt="speaker name">
+                        <img src="./src/images/aman.jpg" height="363px" alt="Aman Anand">
                         <div class="info_box">
                             <h5 class="name">Aman Anand</h5>
                             <p class="position">Head-Designing Team</p>
@@ -359,7 +401,7 @@
         <div class="col-md-3 col-sm-6">
                 <div class="speaker_box">
                     <div class="speaker_img">
-                        <img src="./src/images/kunal.jpg" alt="Kunal Mittakl">
+                        <img src="./src/images/kunal.jpg" height="363px" alt="Kunal Mittal">
                         <div class="info_box">
                             <h5 class="name">Kunal Mittal</h5>
                             <p class="position">Head-Marketing Team</p>
@@ -370,7 +412,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s3.png" alt="speaker name">
+                    <img src="./src/images/ashutosh.jpeg" height="363px" alt="Ashutosh Rajput">
                     <div class="info_box">
                         <h5 class="name">Ashutosh Rajput</h5>
                         <p class="position">Head-Cultural Club</p>
@@ -381,7 +423,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s4.png" alt="speaker name">
+                    <img src="./src/images/shubhamS.jpeg" height="363px" alt="Shubham Sharma">
                     <div class="info_box">
                         <h5 class="name">Shubham Sharma</h5>
                         <p class="position">Head-Cultural Club</p>
@@ -392,7 +434,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s5.png" alt="speaker name">
+                    <img src="./src/images/akshat.jpg" height="363px" alt="Akshat Gupta">
                     <div class="info_box">
                         <h5 class="name">Akshat Gupta</h5>
                         <p class="position">Head-Technical Club</p>
@@ -403,7 +445,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s6.png" alt="speaker name">
+                    <img src="./src/images/shubhamG.jpg" height="363px" alt="speaker name">
                     <div class="info_box">
                         <h5 class="name">Shubham Guglani</h5>
                         <p class="position">Head-Technical Club</p>
@@ -414,7 +456,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="speaker_box">
                 <div class="speaker_img">
-                    <img src="assets/img/speakers/s7.png" alt="speaker name">
+                    <img src="./src/images/vipin.jpg" height="363px" alt="speaker name">
                     <div class="info_box">
                         <h5 class="name">Vipin Yadav</h5>
                         <p class="position">Head-Fine Arts and Photography Club</p>
@@ -436,10 +478,10 @@
         <div class="col-md-3 col-sm-6">
                 <div class="speaker_box">
                     <div class="speaker_img">
-                        <img src="assets/img/speakers/s8.png" alt="speaker name">
+                        <img src="./src/images/amanS.jpeg" height="363px" alt="Aman Sagar">
                         <div class="info_box">
                             <h5 class="name">Aman Sagar</h5>
-                            <p class="position">Literary Club</p>
+                            <p class="position">Head-Literary Club</p>
                         </div>
                     </div>
                 </div>
@@ -447,10 +489,10 @@
             <div class="col-md-3 col-sm-6">
                     <div class="speaker_box">
                         <div class="speaker_img">
-                            <img src="assets/img/speakers/s8.png" alt="speaker name">
+                            <img src="./src/images/vipasha.jpeg" height="363px" alt="speaker name">
                             <div class="info_box">
                                 <h5 class="name">Vipasha Chandwani</h5>
-                                <p class="position">Literary Club</p>
+                                <p class="position">Head-Literary Club</p>
                             </div>
                         </div>
                     </div>
@@ -590,6 +632,7 @@
         </div>
     </div>
     <!--footer end -->
+    <script src="registration.js"></script>
     
     <!-- jquery -->
     <script src="assets/js/jquery.min.js"></script>
