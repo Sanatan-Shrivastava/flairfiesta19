@@ -1,19 +1,25 @@
 {
-  "name": "evento",
+  "name": "flairfiesta-19",
   "version": "1.0.0",
-  "description": "event html template",
-  "main": "gulpfile.js",
+  "description": "IIITK FEST",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "colorlib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanatan-Shrivastava/FlairFiesta-19.git"
+  },
+  "keywords": [
+    "IIITK"
+  ],
+  "author": "Sanatan Shrivastava",
   "license": "ISC",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-ruby-sass": "^3.0.0",
-    "gulp-uglify": "^3.0.0"
+  "bugs": {
+    "url": "https://github.com/Sanatan-Shrivastava/FlairFiesta-19/issues"
+  },
+  "homepage": "https://github.com/Sanatan-Shrivastava/FlairFiesta-19#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
   }
 }

@@ -33,13 +33,14 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
 </head>
 <body>
         <header class="header navbar fixed-top navbar-expand-md">
                 <div class="container">
-                        <a class="navbar-brand logo" href="index.html">
-                                <img src="./src/images/logoiiitk.png" width="110%" height="200%" alt="FlairFiesta"/> 
-                            </a>
                     <a class="navbar-brand logo" href="index.html">
                         <img src="./src/images/ff_logo_dark.png" width="50%" height="50%" alt="FlairFiesta"/> 
                     </a>
@@ -162,139 +163,6 @@
     <script src="assets/js/wow.min.js"></script>
     <!-- Custom js -->
     <script src="assets/js/main.js"></script>
-    <script>
-    var questions = [
-    {question:"What's your first name?", type: "text"},
-    {question:"What's your last name?", type: "text"},
-    {question:"What's your email?", pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/},
-    {question:"What's your mobile?", pattern: /^\d{10}$/},
-    {question:"What's your college?", type: "text"},
-    {question:"What's your college ID?", type: "text"},
-    {question:"Create your PIN (4 Digits)", type: "password", pattern: /^[1-9]\d{3}$/},
-    {question:"Are you a Student of IIITK?(yes/no)", type: "text", pattern: /^yes|no$/i }
-  ]
-
-/**********
-
-  !!!!!
-  New Version: https://codepen.io/arcs/pen/rYXrNQ
-  !!!!!
-  
-  Credits for the design go to XavierCoulombeM
-  https://dribbble.com/shots/2510592-Simple-register-form
-  
-  This Pen uses no libraries except fonts and should 
-  work on all modern browsers
-  
-  The answers are stored in the `questions` array
-  with the key `value`. 
-
- **********/
-
-;(function(){
-
-  var tTime = 100  // transition transform time from #register in ms
-  var wTime = 200  // transition width time from #register in ms
-  var eTime = 1000 // transition width time from inputLabel in ms
-
-  // init
-  // --------------
-  var position = 0
-
-  putQuestion()
-
-  progressButton.addEventListener('click', validate)
-  inputField.addEventListener('keyup', function(e){
-    transform(0, 0) // ie hack to redraw
-    if(e.keyCode == 13) validate()
-  })
-
-  // functions
-  // --------------
-
-  // load the next question
-  function putQuestion() {
-    inputLabel.innerHTML = questions[position].question
-    inputField.value = ''
-    inputField.type = questions[position].type || 'text'  
-    inputField.focus()
-    showCurrent()
-  }
-  
-  // when all the questions have been answered
-  function done() {
-    
-    // remove the box if there is no next question
-    register.className = 'close'
-    
-    // add the h1 at the end with the welcome text
-    var h1 = document.createElement('h1')
-    h1.appendChild(document.createTextNode("Welcome to FlairFiesta 2019" + questions[0].value + '!'))
-    setTimeout(function() {
-      register.parentElement.appendChild(h1)     
-      setTimeout(function() {h1.style.opacity = 1}, 50)
-    }, eTime)
-    
-  }
-
-  // when submitting the current question
-  function validate() {
-
-    // set the value of the field into the array
-    questions[position].value = inputField.value
-
-    // check if the pattern matches
-    if (!inputField.value.match(questions[position].pattern || /.+/)) wrong()
-    else ok(function() {
-      
-      // set the progress of the background
-      progress.style.width = ++position * 100 / questions.length + 'vw'
-
-      // if there is a new question, hide current and load next
-      if (questions[position]) hideCurrent(putQuestion)
-      else hideCurrent(done)
-             
-    })
-
-  }
-
-  // helper
-  // --------------
-
-  function hideCurrent(callback) {
-    inputContainer.style.opacity = 0
-    inputProgress.style.transition = 'none'
-    inputProgress.style.width = 0
-    setTimeout(callback, wTime)
-  }
-
-  function showCurrent(callback) {
-    inputContainer.style.opacity = 1
-    inputProgress.style.transition = ''
-    inputProgress.style.width = '100%'
-    setTimeout(callback, wTime)
-  }
-
-  function transform(x, y) {
-    register.style.transform = 'translate(' + x + 'px ,  ' + y + 'px)'
-  }
-
-  function ok(callback) {
-    register.className = ''
-    setTimeout(transform, tTime * 0, 0, 10)
-    setTimeout(transform, tTime * 1, 0, 0)
-    setTimeout(callback,  tTime * 2)
-  }
-
-  function wrong(callback) {
-    register.className = 'wrong'
-    for(var i = 0; i < 6; i++) // shaking motion
-      setTimeout(transform, tTime * i, (i%2*2-1)*20, 0)
-    setTimeout(transform, tTime * 6, 0, 0)
-    setTimeout(callback,  tTime * 7)
-  }
-
-}())</script>
-<script src="registration.js"></script>
+    <script src="registration.js"></script>
 </body>
 </html>
