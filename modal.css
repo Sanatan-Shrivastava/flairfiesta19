@@ -46,4 +46,16 @@
     outline: none;
 }
 
+.contentdes{
+  margin-right: 9em;
+  margin-left: 9em;
+  text-align: justify;
+}
 
+@media(max-width: 767px){
+  .contentdes{
+    margin-right: 2em;
+    margin-left: 2em;
+    text-align: justify;
+  }
+}
