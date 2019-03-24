@@ -34,6 +34,9 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="regmodal.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
 </head>
 <body>
 <div class="loader">
@@ -56,13 +59,13 @@
                     <a class="nav-link active" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                        <a onclick="alert('Starting Soon');" class="nav-link" href="#">Register</a>
+                    <a class="nav-link " href="register.html">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="events.html">Events</a>
                 </li>
                 <li class="nav-item">
-                        <a onclick="alert('Coming Soon');" class="nav-link" href="#">Timeline</a>
+                    <a class="nav-link " href="contact.html">Contact</a>
                 </li>
                 <li class="search_btn">
                     <a  href="#">
@@ -117,13 +120,13 @@
             </div>
             <div class="event_word">
                 <div class="row justify-content-center">
-                        <p class="contentdes">Zip your bag and unzip your creativity, for one of the most awaited annual poetry competition- Kavyalokan, is round the corner.
+                    <p style="margin: 5px;">Zip your bag and unzip your creativity, for one of the most awaited annual poetry competition- Kavyalokan, is round the corner.
                         </p>
                     </div>
                 </div>
             </div>
             <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal')" id="myBtn">Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded" onclick="openmod('kavyalokan')" id="myBtn">Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal" class="modal">
 
@@ -144,15 +147,15 @@
           </div>
         </div>
                         <!-- registration modal -->
-                       <div id="myregModal" class="modal">
+                       <div id="kavyalokan" class="modal">
 
                         <!-- modal content -->
                        <center><div class="modal-content">
                             <p><strong>Register for Kavyalokan</strong></p>
-                            <input type="FlairID" placeholder="FlairID"> <br>
-                            <input type="pin" placeholder="pin"> <br>
-                            <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                            <center><button class="closemod" onclick="closemodal('myregModal')" type="button">Close</button></center>
+                            <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
+                            <input type="pin" id="pin" placeholder="pin"> <br>
+                            <center><button class="closemod" onclick="foo('kavyalokan','solo','lit')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                            <center><button class="closemod" onclick="closemodal('kavyalokan')" type="button">Close</button></center>
                         </div></center>    
                         </div>
 
@@ -191,7 +194,7 @@
                         </div>
                     </div>
                     <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal3')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal3')" id="myBtn">Register</a></button></center>
+                <button class=" btn btn-primary btn-rounded" onclick="openmod('whoseLine')" id="myBtn">Register</a></button></center>
                     <!-- The Modal -->
                         <div id="myModal3" class="modal">
         
@@ -212,17 +215,17 @@
                   </div>
                 </div>
                                 <!-- registration modal -->
-                               <div id="myregModal3" class="modal">
+                               <div id="whoseLine" class="modal">
         
                                 <!-- modal content -->
                                <center><div class="modal-content">
                                     <p><strong>Register for whose line is it anyway?</strong></p>
-                                    <input type="number" max="2" placeholder="Team Size"> <br>
-                                    <input type="text"  placeholder="Team Name"> <br>
-                                    <input type="FlairID" placeholder="FlairID"> <br>
-                                    <input type="pin" placeholder="pin"> <br>
-                                    <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                    <center><button class="closemod" onclick="closemodal('myregModal3')" type="button">Close</button></center>
+                                    <input type="number" id="teamNumber" max="2" placeholder="Team Size"> <br>
+                                    <input type="text" id="teamName" placeholder="Team Name"> <br>
+                                    <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
+                                    <input type="pin" id="pin" placeholder="pin"> <br>
+                                    <center><button class="closemod" type="button" onclick="foo('whoseLine','team','lit')" style="margin-bottom: 5px;">Submit</button></center> 
+                                    <center><button class="closemod" onclick="closemodal('whoseLine')" type="button">Close</button></center>
                                 </div></center>    
                                 </div>
         
@@ -266,7 +269,7 @@
                                 </div>
                             </div>
                             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal4')" style="margin-bottom: 2px;" >Rules</a></button>
-                        <button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal4')" >Register</a></button></center>
+                        <button class=" btn btn-primary btn-rounded"  onclick="openmod('storyLay')" >Register</a></button></center>
                             <!-- The Modal -->
                                 <div id="myModal4" class="modal">
                                   <!-- Modal content -->
@@ -289,15 +292,15 @@
     </div>
   </div>
                   <!-- registration modal -->
-                 <div id="myregModal4" class="modal">
+                 <div id="storyLay" class="modal">
 
                   <!-- modal content -->
                  <center><div class="modal-content">
                       <p><strong>Register for StoryLay</strong></p>
-                      <input type="FlairID" placeholder="FlairID"> <br>
-                      <input type="pin" placeholder="pin"> <br>
-                      <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                      <center><button class="closemod" onclick="closemodal('myregModal4')" type="button">Close</button></center>
+                      <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
+                      <input type="pin" id="pin" placeholder="pin"> <br>
+                      <center><button class="closemod" type="button" onclick="foo('storyLay','solo','lit')" style="margin-bottom: 5px;">Submit</button></center> 
+                      <center><button class="closemod" onclick="closemodal('storyLay')" type="button">Close</button></center>
                   </div></center>    
                   </div>
                  </div>
@@ -333,7 +336,7 @@
                             </div>
                         </div>
             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal5')" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal5')" >Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded"  onclick="openmod('captionIt')" >Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal5" class="modal">
                   <!-- Modal content -->
@@ -360,15 +363,15 @@
 </div>
 </div>
   <!-- registration modal -->
- <div id="myregModal5" class="modal">
+ <div id="captionIt" class="modal">
 
   <!-- modal content -->
  <center><div class="modal-content">
       <p><strong>Register for Caption Writing</strong></p>
-      <input type="FlairID" placeholder="FlairID"> <br>
-      <input type="pin" placeholder="pin"> <br>
-      <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-      <center><button class="closemod" onclick="closemodal('myregModal5')" type="button">Close</button></center>
+      <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
+      <input type="pin" id="pin" placeholder="pin"> <br>
+      <center><button class="closemod" type="button" onclick="foo('captionIt','solo','lit')" style="margin-bottom: 5px;">Submit</button></center> 
+      <center><button class="closemod" onclick="closemodal('captionIt')" type="button">Close</button></center>
   </div></center>    
   </div>
  </div>
@@ -401,7 +404,7 @@
                             </div>
                         </div>
             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal6')" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal6')" >Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded"  onclick="openmod('downTheMemoryLane')" >Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal6" class="modal">
                   <!-- Modal content -->
@@ -418,17 +421,17 @@
 </div>
 </div>
   <!-- registration modal -->
- <div id="myregModal6" class="modal">
+ <div id="downTheMemoryLane" class="modal">
 
   <!-- modal content -->
  <center><div class="modal-content">
       <p><strong>Register for Down the memory lane</strong></p>
-      <input type="number" max="2" placeholder="Team Size"> <br>
-      <input type="text"  placeholder="Team Name"> <br>
-      <input type="FlairID" placeholder="FlairID"> <br>
-      <input type="pin" placeholder="pin"> <br>
-      <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-      <center><button class="closemod" onclick="closemodal('myregModal6')" type="button">Close</button></center>
+      <input type="number" max="2" id="teamNumber" placeholder="Team Size"> <br>
+      <input type="text" id="teamName" placeholder="Team Name"> <br>
+      <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
+      <input type="pin" id="pin" placeholder="pin"> <br>
+      <center><button class="closemod" type="button" onclick="foo('downTheMemoryLane','team','lit')" style="margin-bottom: 5px;">Submit</button></center> 
+      <center><button class="closemod" onclick="closemodal('downTheMemoryLane')" type="button">Close</button></center>
   </div></center>    
   </div>
  </div>
@@ -445,7 +448,7 @@
 
 
 
-<section class="bg-img pt100 pb100" style="background: #2B84F0;">
+<section class="bg-img pt100 pb100" style="background: #ff0e48;">
         <div class="container">
             <div class="section_title mb30">
                 <h3 class="title color-light">
@@ -460,7 +463,7 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
 
                 </div>
                 <div class="col-md-3 text-md-right text-center">
-                    <a href="#" onclick="alert('Starting Soon');"  class="btn btn-primary btn-rounded mt30">Register</a>
+                    <a href="register.html" class="btn btn-primary btn-rounded mt30">Register</a>
                 </div>
             </div>
         </div>
@@ -482,14 +485,14 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
                         <div class="footer_box_body">
                             <p>
                                     Rahul Tyagi: President, FlairFiesta'19. <br>
-                                    Contact No. : +91-8559903061 <br>
+                                    Contact No. : +91-8559903061
                                     Saransh Jain: General-Secretary, FlairFiesta'19. <br>
                                     Contact No. : +91-7427024632 <br>
         For enquries and information regarding the fest feel free to email us on team@flairfiesta.in .
                             </p>
                            <center><ul class="footer_social">
                                 <li>
-                                    <a href=https://www.facebook.com/iiitkfd><i class="ion-social-facebook"></i></a>
+                                    <a href=https://www.facebook.com/iiitkfd/"><i class="ion-social-facebook"></i></a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/flairfiesta/"><i class="ion-social-instagram"></i></a>
@@ -513,13 +516,13 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                                <a onclick="alert('Coming Soon');" href="#">Register</a>
+                            <a href="register.html">Register</a>
                         </li>
                         <li>
                             <a href="events.html">Events</a>
                         </li>
                         <li>
-                                <a onclick="alert('Coming Soon');" href="#">Timeline</a>
+                            <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -527,6 +530,7 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
         </div>
     </div>
     <!--footer end -->
+    <script src="registerForEvents.js"></script>
     <script>
             // Get the modal
             // var modal = document.getElementById('myModal');
