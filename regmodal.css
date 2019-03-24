@@ -16,3 +16,8 @@
   max-width: 200px;
   border: 1px solid grey;
 }
+
+input[type=FlairID], [type=pin], [type=text], [type=number]{
+  max-width: 200px;
+  outline-color: black;
+}
