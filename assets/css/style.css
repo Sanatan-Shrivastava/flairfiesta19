@@ -2,7 +2,7 @@ body {
   margin: 0;
   /* background-image: url('./src/images/ff_logo_dark.png'); */
   /* opacity: 0.5; */
-  background: #25A3FF;
+  background: rgba(170,0,52);
   /* font-family: 'Roboto', sans-serif; */
 }
 
@@ -15,7 +15,8 @@ h1 {
 
 #progress {
   position: absolute;
-  background: #ff0e48;
+  background:rgba(233,139,43);
+  /* background:  rgba(170,0,52); */
   height: 100vh;
   width: 0;
   transition: width 0.2s ease-in-out;

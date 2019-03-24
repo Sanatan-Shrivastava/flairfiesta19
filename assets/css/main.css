@@ -2024,7 +2024,7 @@ Cover
   margin-bottom: 0;
   opacity: 0;
   font-weight: 500;
-  color:  #2A9DF1;
+  color:  #03142E;
   text-transform: uppercase;
   -webkit-transform: translateY(20px);
   transform: translateY(20px);
@@ -2199,6 +2199,7 @@ Cover
   top: 0;
   bottom: 0;
   background-image: linear-gradient(70deg, grey, black);
+
 }
 .inner_cover .inner_cover_content {
   padding: 170px 0;
