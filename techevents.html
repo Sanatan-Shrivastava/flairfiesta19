@@ -34,6 +34,9 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="regmodal.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
 </head>
 <body>
 <div class="loader">
@@ -127,7 +130,7 @@
                 </div>
             </div>
             <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal')" id="myBtn">Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded" onclick="openmod('codeWars')" id="myBtn">Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal" class="modal">
 
@@ -152,15 +155,15 @@
           </div>
         </div>
                         <!-- registration modal -->
-                       <div id="myregModal" class="modal">
+                       <div id="codeWars" class="modal">
 
                         <!-- modal content -->
                        <center><div class="modal-content">
                             <strong>Register for Code-Wars</strong>
                             <input type="FlairID" placeholder="FlairID"> <br>
                             <input type="pin" placeholder="pin"> <br>
-                            <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                            <center><button class="closemod" onclick="closemodal('myregModal')" type="button">Close</button></center>
+                            <center><button class="closemod" onclick="foo('codeWars','solo','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                            <center><button class="closemod" onclick="closemodal('codeWars')" type="button">Close</button></center>
                         </div></center>    
                         </div>
 
@@ -201,7 +204,7 @@
                         </div>
                     </div>
                     <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal2')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal2')" id="myBtn">Register</a></button></center>
+                <button class=" btn btn-primary btn-rounded" onclick="openmod('webTags')" id="myBtn">Register</a></button></center>
                     <!-- The Modal -->
                         <div id="myModal2" class="modal">
         
@@ -226,7 +229,7 @@ text used in the website. <br>
                   </div>
                 </div>
                                 <!-- registration modal -->
-                               <div id="myregModal2" class="modal">
+                               <div id="webTags" class="modal">
         
                                 <!-- modal content -->
                                <center><div class="modal-content">
@@ -235,8 +238,8 @@ text used in the website. <br>
                                     <input type="text"  placeholder="Team Name"> <br>
                                     <input type="FlairID" placeholder="FlairID"> <br>
                                     <input type="pin" placeholder="pin"> <br>
-                                    <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                    <center><button class="closemod" onclick="closemodal('myregModal2')" type="button">Close</button></center>
+                                    <center><button class="closemod" onclick="foo('webTags','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                    <center><button class="closemod" onclick="closemodal('webTags')" type="button">Close</button></center>
                                 </div></center>    
                                 </div>
         
@@ -280,7 +283,7 @@ text used in the website. <br>
                                 </div>
                             </div>
                             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal3')" style="margin-bottom: 2px;" >Rules</a></button>
-                        <button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal3')" >Register</a></button></center>
+                        <button class=" btn btn-primary btn-rounded"  onclick="openmod('connectTheDots')" >Register</a></button></center>
                             <!-- The Modal -->
                                 <div id="myModal3" class="modal">
                                   <!-- Modal content -->
@@ -297,7 +300,7 @@ text used in the website. <br>
     </div>
   </div>
                   <!-- registration modal -->
-                 <div id="myregModal3" class="modal">
+                 <div id="connectTheDots" class="modal">
 
                   <!-- modal content -->
                  <center><div class="modal-content">
@@ -306,8 +309,8 @@ text used in the website. <br>
                       <input type="text"  placeholder="Team Name"> <br>
                       <input type="FlairID" placeholder="FlairID"> <br>
                       <input type="pin" placeholder="pin"> <br>
-                      <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                      <center><button class="closemod" onclick="closemodal('myregModal3')" type="button">Close</button></center>
+                      <center><button class="closemod" onclick="foo('connectTheDots','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                      <center><button class="closemod" onclick="closemodal('connectTheDots')" type="button">Close</button></center>
                   </div></center>    
                   </div>
                  </div>
@@ -342,7 +345,7 @@ text used in the website. <br>
                             </div>
                         </div>
             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal4')" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal4')" >Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded"  onclick="openmod('readBtwLines')" >Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal4" class="modal">
                   <!-- Modal content -->
@@ -387,7 +390,7 @@ Further details of this round will be provided in the question paper.
 </div>
 </div>
   <!-- registration modal -->
- <div id="myregModal4" class="modal">
+ <div id="readBtwLines" class="modal">
 
   <!-- modal content -->
  <center><div class="modal-content">
@@ -396,8 +399,8 @@ Further details of this round will be provided in the question paper.
       <input type="text"  placeholder="Team Name"> <br>
       <input type="FlairID" placeholder="FlairID"> <br>
       <input type="pin" placeholder="pin"> <br>
-      <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-      <center><button class="closemod" onclick="closemodal('myregModal4')" type="button">Close</button></center>
+      <center><button class="closemod" onclick="foo('readBtwLines','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+      <center><button class="closemod" onclick="closemodal('readBtwLines')" type="button">Close</button></center>
   </div></center>    
   </div>
  </div>
@@ -430,13 +433,13 @@ Further details of this round will be provided in the question paper.
                             </div>
                         </div>
             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal5')" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal5')" >Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded"  onclick="openmod('dataHulk')" >Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal5" class="modal">
                   <!-- Modal content -->
                  <div class="modal-content">
                    <!-- <span class="closemod">&times;</span> -->
-                   <p><strong>DataHulk</strong><br>
+                   <p><strong>Data Hulk</strong><br>
                         Rules&colon; <br>
                         1.The competition will be hosted on Kaggle, and as such a kaggle account is required for participation. <br>
                         2.Students currently (as of 5th April 2019) pursuing bachelor’s/master’s degree in any of the technical field (like B.Tech, BCA, B.Sc, M.Tech, MCA, M.Sc in any branch) are eligible to participate. <br>
@@ -451,15 +454,15 @@ Further details of this round will be provided in the question paper.
 </div>
 </div>
   <!-- registration modal -->
- <div id="myregModal5" class="modal">
+ <div id="dataHulk" class="modal">
 
   <!-- modal content -->
  <center><div class="modal-content">
       <p><strong>Register for DataHulk</strong></p>
       <input type="FlairID" placeholder="FlairID"> <br>
       <input type="pin" placeholder="pin"> <br>
-      <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-      <center><button class="closemod" onclick="closemodal('myregModal5')" type="button">Close</button></center>
+      <center><button class="closemod" onclick="foo('dataHulk','solo','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+      <center><button class="closemod" onclick="closemodal('dataHulk')" type="button">Close</button></center>
   </div></center>    
   </div>
  </div>
@@ -497,7 +500,7 @@ Further details of this round will be provided in the question paper.
                     </div>
                 </div>
     <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal6')" style="margin-bottom: 2px;" >Rules</a></button>
-<button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal6')" >Register</a></button></center>
+<button class=" btn btn-primary btn-rounded"  onclick="openmod('CS_GO')" >Register</a></button></center>
     <!-- The Modal -->
         <div id="myModal6" class="modal">
           <!-- Modal content -->
@@ -525,7 +528,7 @@ as per their requirement for that 2 test rounds will be allowed to be played for
 </div>
 </div>
 <!-- registration modal -->
-<div id="myregModal6" class="modal">
+<div id="CS_GO" class="modal">
 
 <!-- modal content -->
 <center><div class="modal-content">
@@ -534,8 +537,8 @@ as per their requirement for that 2 test rounds will be allowed to be played for
 <input type="text"  placeholder="Team Name"> <br>
 <input type="FlairID" placeholder="FlairID"> <br>
 <input type="pin" placeholder="pin"> <br>
-<center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-<center><button class="closemod" onclick="closemodal('myregModal6')" type="button">Close</button></center>
+<center><button class="closemod" onclick="foo('CS_GO','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+<center><button class="closemod" onclick="closemodal('CS_GO')" type="button">Close</button></center>
 </div></center>    
 </div>
 </div>
@@ -560,7 +563,7 @@ as per their requirement for that 2 test rounds will be allowed to be played for
             </div>
         </div>
 <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal7')" style="margin-bottom: 2px;" >Rules</a></button>
-<button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal7')" >Register</a></button></center>
+<button class=" btn btn-primary btn-rounded"  onclick="openmod('pubg')" >Register</a></button></center>
 <!-- The Modal -->
 <div id="myModal7" class="modal">
   <!-- Modal content -->
@@ -585,7 +588,7 @@ as per their requirement for that 2 test rounds will be allowed to be played for
 </div>
 </div>
 <!-- registration modal -->
-<div id="myregModal7" class="modal">
+<div id="pubg" class="modal">
 
 <!-- modal content -->
 <center><div class="modal-content">
@@ -594,8 +597,8 @@ as per their requirement for that 2 test rounds will be allowed to be played for
 <input type="text"  placeholder="Team Name"> <br>
 <input type="FlairID" placeholder="FlairID"> <br>
 <input type="pin" placeholder="pin"> <br>
-<center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-<center><button class="closemod" onclick="closemodal('myregModal7')" type="button">Close</button></center>
+<center><button class="closemod" onclick="foo('pubg','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+<center><button class="closemod" onclick="closemodal('pubg')" type="button">Close</button></center>
 </div></center>    
 </div>
 </div>
@@ -620,13 +623,13 @@ Escape, .Lunacy, Catacombs, Crossfire, suspension.) <br><br>
             </div>
         </div>
 <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal8')" style="margin-bottom: 2px;" >Rules</a></button>
-<button class=" btn btn-primary btn-rounded"  onclick="openmod('myregModal8')" >Register</a></button></center>
+<button class=" btn btn-primary btn-rounded"  onclick="openmod('miniMilitia')" >Register</a></button></center>
 <!-- The Modal -->
 <div id="myModal8" class="modal">
   <!-- Modal content -->
  <div class="modal-content">
    <!-- <span class="closemod">&times;</span> -->
-   <p><strong>Player Unknown BattleGrounds</strong><br>
+   <p><strong>Mini Militia</strong><br>
         Rules&colon; <br>
         1.Only squad match. Each team must have FIVE (5) players. <br>
 2.Registration fee per team is X Rs. <br>
@@ -645,17 +648,17 @@ be disqualified, and In case of disqualification entry fees will not be refunded
 </div>
 </div>
 <!-- registration modal -->
-<div id="myregModal8" class="modal">
+<div id="miniMilitia" class="modal">
 
 <!-- modal content -->
 <center><div class="modal-content">
-<p><strong>Register for PUBG</strong></p>
+<p><strong>Register for Mini Militia</strong></p>
 <input type="number" min="0" max="5" placeholder="Team Size"> <br>
 <input type="text"  placeholder="Team Name"> <br>
 <input type="FlairID" placeholder="FlairID"> <br>
 <input type="pin" placeholder="pin"> <br>
-<center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-<center><button class="closemod" onclick="closemodal('myregModal8')" type="button">Close</button></center>
+<center><button class="closemod" onclick="foo('miniMilitia','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+<center><button class="closemod" onclick="closemodal('miniMilitia')" type="button">Close</button></center>
 </div></center>    
 </div>
 </div>
@@ -751,6 +754,7 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
         </div>
     </div>
     <!--footer end -->
+    <script src="registerForEvents.js"></script>
     <script>
             // Get the modal
             // var modal = document.getElementById('myModal');

@@ -2422,9 +2422,10 @@ Cover
   overflow: hidden;
 }
 .speaker_box .speaker_img img {
-  width: 100%;
+  width: 90%;
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
+  padding: 5px;
 }
 .speaker_box .speaker_img .info_box {
   position: absolute;

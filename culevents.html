@@ -34,6 +34,9 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="regmodal.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
 </head>
 <body>
 <div class="loader">
@@ -122,7 +125,7 @@
                 </div>
             </div>
             <button class="btn btn-primary btn-rounded" onclick="openmod('myModal')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class="btn btn-primary btn-rounded" onclick="openmod('myregModal')" id="myBtn">Register</a></button></center>
+        <button class="btn btn-primary btn-rounded" onclick="openmod('stepUp')" id="myBtn">Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal" class="modal">
 
@@ -144,15 +147,15 @@
           </div>
         </div>
                         <!-- registration modal -->
-                       <div id="myregModal" class="modal">
+                       <div id="stepUp" class="modal">
 
                         <!-- modal content -->
                        <center><div class="modal-content">
                             <p><strong>Register for STEP-UP (solo dance)</strong></p>
                             <input type="FlairID" placeholder="FlairID"> <br>
                             <input type="pin" placeholder="pin"> <br>
-                            <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                            <center><button class="closemod" onclick="closemodal('myregModal')" type="button">Close</button></center>
+                            <center><button class="closemod" onclick="foo('stepUp','solo','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                            <center><button class="closemod" onclick="closemodal('stepUp')" type="button">Close</button></center>
                         </div></center>    
                         </div>
 
@@ -189,7 +192,7 @@
                         </div>
                     </div>
                     <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal2')" style="margin-bottom: 2px;" >Rules</a></button>
-                <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myregModal2')">Register</a></button></center>
+                <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('dropTheMic')">Register</a></button></center>
                     <!-- The Modal -->
                         <div id="myModal2" class="modal">
                           <!-- Modal content -->
@@ -212,15 +215,15 @@ derogatory language.<br>
                             <center><button class="closemod" onclick="closemodal('myModal2')" type="button">Close</button></center>
                   </div>
               </div>
-              <div id="myregModal2" class="modal">
+              <div id="dropTheMic" class="modal">
 
                     <!-- modal content -->
                    <center><div class="modal-content">
                         <p><strong>Register for Drop the mic</strong></p>
                         <input type="FlairID" placeholder="FlairID"> <br>
                         <input type="pin" placeholder="pin"> <br>
-                        <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                        <center><button class="closemod" onclick="closemodal('myregModal2')" type="button">Close</button></center>
+                        <center><button class="closemod" onclick="foo('dropTheMic','solo','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                        <center><button class="closemod" onclick="closemodal('dropTheMic')" type="button">Close</button></center>
                     </div></center>    
                     </div>
 
@@ -257,14 +260,14 @@ derogatory language.<br>
                                 </div>
                             </div>
                             <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myModal3')" style="margin-bottom: 2px;" >Rules</a></button>
-                        <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('myregModal3')">Register</a></button></center>
+                        <button class=" btn btn-primary btn-rounded" id="myBtn" onclick="openmod('begBorrowSteal')">Register</a></button></center>
                             <!-- The Modal -->
                                 <div id="myModal3" class="modal">
                                   <!-- Modal content -->
                                  <div class="modal-content">
                                    <!-- <span class="closemod">&times;</span> -->
                                    <p><Strong>BEG BORROW STEAL</Strong><br>
-                                    <strong>Registration fee: 80 per team</strong>
+                                    <strong>Registration fee: 80 per team</strong><br>
                                         Rules: <br>
                                         1. A Team will comprise of 3-5 players. <br>
                                         2. It is advised to make a team with mixture of boys and girls. <br>
@@ -280,7 +283,7 @@ derogatory language.<br>
                           </div>
                       </div>
                              <!-- registration modal -->
-                             <div id="myregModal3" class="modal">
+                             <div id="begBorrowSteal" class="modal">
         
                                     <!-- modal content -->
                                    <center><div class="modal-content">
@@ -289,8 +292,8 @@ derogatory language.<br>
                                         <input type="text"  placeholder="Team Name"> <br>
                                         <input type="FlairID" placeholder="FlairID"> <br>
                                         <input type="pin" placeholder="pin"> <br>
-                                        <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                        <center><button class="closemod" onclick="closemodal('myregModal3')" type="button">Close</button></center>
+                                        <center><button class="closemod" onclick="foo('begBorrowSteal','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                        <center><button class="closemod" onclick="closemodal('begBorrowSteal')" type="button">Close</button></center>
                                     </div></center>    
                                     </div>
             
@@ -326,7 +329,7 @@ derogatory language.<br>
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal4')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal4')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('madAds')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal4" class="modal">
                     
@@ -350,7 +353,7 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal4" class="modal">
+                                           <div id="madAds" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
@@ -359,8 +362,8 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal4')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('madAds','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('madAds')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -398,7 +401,7 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal5')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal5')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('webSeriesQuiz')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal5" class="modal">
                     
@@ -420,7 +423,7 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal5" class="modal">
+                                           <div id="webSeriesQuiz" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
@@ -429,8 +432,8 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal5')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('webSeriesQuiz','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('webSeriesQuiz')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -468,7 +471,7 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal6')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal6')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('designByHooman')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal6" class="modal">
                     
@@ -489,17 +492,17 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal6" class="modal">
+                                           <div id="designByHooman" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
-                                                <p><strong>Register for WEB SERIES QUIZ</strong></p>
+                                                <p><strong>Register for DESIGN BY HOOMAN</strong></p>
                                                 <input type="number" max="3" placeholder="Team Size"> <br>
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal6')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('designByHooman','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('designByHooman')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -537,7 +540,7 @@ prejudice or defamation content in the advertisement. 7. The decision of the jud
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal7')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal7')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('startWith50')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal7" class="modal">
                     
@@ -558,7 +561,7 @@ Task completion: 200 points Each rupee: 10 points <br>
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal7" class="modal">
+                                           <div id="startWith50" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
@@ -567,8 +570,8 @@ Task completion: 200 points Each rupee: 10 points <br>
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal7')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('startWith50','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('startWith50')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -615,7 +618,7 @@ Task completion: 200 points Each rupee: 10 points <br>
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal8')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal8')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('iplAuction')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal8" class="modal">
                     
@@ -639,7 +642,7 @@ event.
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal8" class="modal">
+                                           <div id="iplAuction" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
@@ -648,8 +651,8 @@ event.
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal8')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('iplAuction','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('iplAuction')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -690,8 +693,8 @@ event.
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal9')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal18')" id="myBtn">Register(solo)</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal9')" id="myBtn">Register(team)</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('pranksterSolo')" id="myBtn">Register(solo)</a></button>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('pranksterTeam')" id="myBtn">Register(team)</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal9" class="modal">
                     
@@ -717,20 +720,20 @@ participate in this event. <br>
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal18" class="modal">
+                                           <div id="pranksterSolo" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
                                                 <p><strong>Register for PRANKSTER </strong></p>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal18')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('pranksterSolo','solo','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('pranksterSolo')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
 
                                               <!-- registration modal -->
-                                           <div id="myregModal9" class="modal">
+                                           <div id="pranksterTeam" class="modal">
                     
                                                 <!-- modal content -->
                                                <center><div class="modal-content">
@@ -739,8 +742,8 @@ participate in this event. <br>
                                                     <input type="text"  placeholder="Team Name"> <br>
                                                     <input type="FlairID" placeholder="FlairID"> <br>
                                                     <input type="pin" placeholder="pin"> <br>
-                                                    <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                    <center><button class="closemod" onclick="closemodal('myregModal9')" type="button">Close</button></center>
+                                                    <center><button class="closemod" onclick="foo('pranksterTeam','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                    <center><button class="closemod" onclick="closemodal('pranksterTeam')" type="button">Close</button></center>
                                                 </div></center>    
                                                 </div>
                     
@@ -785,7 +788,7 @@ So fasten your seat belts to witness the melodramatic acts of the year.
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal10')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal10')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('rangmanch')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal10" class="modal">
                     
@@ -810,7 +813,7 @@ prejudice or defamation content. <br>
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal10" class="modal">
+                                           <div id="rangmanch" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
@@ -819,8 +822,8 @@ prejudice or defamation content. <br>
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal10')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('rangmanch','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('rangmanch')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -862,7 +865,7 @@ prejudice or defamation content. <br>
                                     </div>
                                 </div> <br> <br>
                                 <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal11')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-                            <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal11')" id="myBtn">Register</a></button></center>
+                            <button class=" btn btn-primary btn-rounded" onclick="openmod('algorythm')" id="myBtn">Register</a></button></center>
                                 <!-- The Modal -->
                                     <div id="myModal11" class="modal">
                     
@@ -890,7 +893,7 @@ synchronization, expressions, and costumes, makeup, setup and overall effects. <
                               </div>
                             </div>
                                             <!-- registration modal -->
-                                           <div id="myregModal11" class="modal">
+                                           <div id="algorythm" class="modal">
                     
                                             <!-- modal content -->
                                            <center><div class="modal-content">
@@ -899,8 +902,8 @@ synchronization, expressions, and costumes, makeup, setup and overall effects. <
                                                 <input type="text"  placeholder="Team Name"> <br>
                                                 <input type="FlairID" placeholder="FlairID"> <br>
                                                 <input type="pin" placeholder="pin"> <br>
-                                                <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                                                <center><button class="closemod" onclick="closemodal('myregModal11')" type="button">Close</button></center>
+                                                <center><button class="closemod" onclick="foo('algorythm','team','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                                                <center><button class="closemod" onclick="closemodal('algorythm')" type="button">Close</button></center>
                                             </div></center>    
                                             </div>
                     
@@ -943,7 +946,7 @@ While scrolling through the feed, do u ever feel like you could have improvised 
                 </div>
             </div> <br> <br>
             <button class=" btn btn-primary btn-rounded" onclick="openmod('myModal12')" id="myBtn" style="margin-bottom: 2px;" >Rules</a></button>
-        <button class=" btn btn-primary btn-rounded" onclick="openmod('myregModal12')" id="myBtn">Register</a></button></center>
+        <button class=" btn btn-primary btn-rounded" onclick="openmod('memeSlam')" id="myBtn">Register</a></button></center>
             <!-- The Modal -->
                 <div id="myModal12" class="modal">
 
@@ -969,15 +972,15 @@ While scrolling through the feed, do u ever feel like you could have improvised 
           </div>
         </div>
                         <!-- registration modal -->
-                       <div id="myregModal12" class="modal">
+                       <div id="memeSlam" class="modal">
 
                         <!-- modal content -->
                        <center><div class="modal-content">
                             <p><strong>Register for MEME-SLAM </strong></p>
                             <input type="FlairID" placeholder="FlairID"> <br>
                             <input type="pin" placeholder="pin"> <br>
-                            <center><button class="closemod" type="button" style="margin-bottom: 5px;">Submit</button></center> 
-                            <center><button class="closemod" onclick="closemodal('myregModal12')" type="button">Close</button></center>
+                            <center><button class="closemod" onclick="foo('memeSlam','solo','cul')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
+                            <center><button class="closemod" onclick="closemodal('memeSlam')" type="button">Close</button></center>
                         </div></center>    
                         </div>
 
@@ -1077,6 +1080,7 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
         </div>
     </div>
     <!--footer end -->
+    <script src="registerForEvents.js"></script>
     <script>
             // Get the modal
             // var modal = document.getElementById('myModal');
