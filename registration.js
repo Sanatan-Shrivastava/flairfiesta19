@@ -148,14 +148,14 @@
   function createIdAndFeedAllData(){
     var database = firebase.database();
     
-    database.ref('Users/flairId' ).once('value').then(function(snapshot) {
+    database.ref('FlairId' ).once('value').then(function(snapshot) {
         //create flairId
         var flairId = "flair@";
         var num = snapshot.val();
         num = num + 1;
         var key = num ;
         flairId = flairId + num.toString();
-        database.ref('Users/flairId').set(num);
+        database.ref('FlairId').set(num);
 
         //create object and push in flairId
         var user = {};
