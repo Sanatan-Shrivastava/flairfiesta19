@@ -157,7 +157,7 @@ Venue: <br>
                             <input type="number" min="0" max="3" placeholder="Team Size"> <br>
                                     <input type="text"  placeholder="Team Name"> <br>
                             <input type="FlairID" placeholder="FlairID"> <br>
-                            <input type="pin" placeholder="pin"> <br>
+                            <input type="password" placeholder="pin"> <br>
                             <center><button class="closemod" onclick="foo('facePainting','team','fap')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                             <center><button class="closemod" onclick="closemodal('facePainting')" type="button">Close</button></center>
                         </div></center>    
@@ -231,7 +231,7 @@ Venue: <br>
                                     <input type="number" min="0" max="3" placeholder="Team Size"> <br>
                                     <input type="text"  placeholder="Team Name"> <br>
                                     <input type="FlairID" placeholder="FlairID"> <br>
-                                    <input type="pin" placeholder="pin"> <br>
+                                    <input type="password" placeholder="pin"> <br>
                                     <center><button class="closemod" onclick="foo('tatooDesign','team','fap')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                                     <center><button class="closemod" onclick="closemodal('tatooDesign')" type="button">Close</button></center>
                                 </div></center>    
@@ -297,7 +297,7 @@ Venue: <br>
                  <center><div class="modal-content">
                       <p><strong>Register for PICTURE PERFECT</strong></p>
                       <input type="FlairID" placeholder="FlairID"> <br>
-                      <input type="pin" placeholder="pin"> <br>
+                      <input type="password" placeholder="pin"> <br>
                       <center><button class="closemod" onclick="foo('picturePerfect','solo','fap')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                       <center><button class="closemod" onclick="closemodal('picturePerfect')" type="button">Close</button></center>
                   </div></center>    
@@ -362,7 +362,7 @@ Venue: <br>
  <center><div class="modal-content">
       <p><strong>Register for CAMPUS CLICK</strong></p>
       <input type="FlairID" placeholder="FlairID"> <br>
-      <input type="pin" placeholder="pin"> <br>
+      <input type="password" placeholder="pin"> <br>
       <center><button class="closemod" onclick="foo('campusClick','solo','fap')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
       <center><button class="closemod" onclick="closemodal('campusClick')" type="button">Close</button></center>
   </div></center>    
@@ -426,7 +426,7 @@ Judging Criteria: <br>
  <center><div class="modal-content">
       <p><strong>Register for VINE-O-MANIA</strong></p>
       <input type="FlairID" placeholder="FlairID"> <br>
-      <input type="pin" placeholder="pin"> <br>
+      <input type="password" placeholder="pin"> <br>
       <center><button class="closemod" onclick="foo('vineOmania','solo','fap')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
       <center><button class="closemod" onclick="closemodal('vineOmania')" type="button">Close</button></center>
   </div></center>    
@@ -498,7 +498,7 @@ Judging Criteria: <br>
   <p><strong>Register for Reciting the snaps
     </strong></p>
   <input type="FlairID" placeholder="FlairID"> <br>
-  <input type="pin" placeholder="pin"> <br>
+  <input type="password" placeholder="pin"> <br>
   <center><button class="closemod" onclick="foo('reciteSnap','solo','fap')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
   <center><button class="closemod" onclick="closemodal('reciteSnap')" type="button">Close</button></center>
 </div></center>    
@@ -610,6 +610,24 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
             // }
             function openmod(str){
                 var modal = document.getElementById(str);
+                var card = modal.getElementsByClassName('modal-content')[0];
+                var collection = card.getElementsByTagName('input');
+                if(collection.length != 0){
+                    var collection = modal.getElementsByTagName('input');
+                    if(collection.length == 4){
+                        collection[0].placeholder = "Team Size";
+                        collection[1].placeholder = "Team Name";
+                        collection[2].placeholder = "Flair Id";
+                        collection[3].placeholder = "Pin";
+                        for(var i = 0;i<collection.length;i++)
+                            collection[i].value = "";
+                    }else{
+                        collection[0].placeholder = "Flair Id";
+                        collection[1].placeholder = "Pin";
+                        for(var i = 0;i<collection.length;i++)
+                            collection[i].value = "";
+                    }
+                }
                 modal.style.display = "block";
             }
             

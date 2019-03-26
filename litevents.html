@@ -153,7 +153,7 @@
                        <center><div class="modal-content">
                             <p><strong>Register for Kavyalokan</strong></p>
                             <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
-                            <input type="pin" id="pin" placeholder="pin"> <br>
+                            <input type="password" id="pin" placeholder="pin"> <br>
                             <center><button class="closemod" onclick="foo('kavyalokan','solo','lit')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                             <center><button class="closemod" onclick="closemodal('kavyalokan')" type="button">Close</button></center>
                         </div></center>    
@@ -223,7 +223,7 @@
                                     <input type="number" id="teamNumber" max="2" placeholder="Team Size"> <br>
                                     <input type="text" id="teamName" placeholder="Team Name"> <br>
                                     <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
-                                    <input type="pin" id="pin" placeholder="pin"> <br>
+                                    <input type="password" id="pin" placeholder="pin"> <br>
                                     <center><button class="closemod" type="button" onclick="foo('whoseLine','team','lit')" style="margin-bottom: 5px;">Submit</button></center> 
                                     <center><button class="closemod" onclick="closemodal('whoseLine')" type="button">Close</button></center>
                                 </div></center>    
@@ -298,7 +298,7 @@
                  <center><div class="modal-content">
                       <p><strong>Register for StoryLay</strong></p>
                       <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
-                      <input type="pin" id="pin" placeholder="pin"> <br>
+                      <input type="password" id="pin" placeholder="pin"> <br>
                       <center><button class="closemod" type="button" onclick="foo('storyLay','solo','lit')" style="margin-bottom: 5px;">Submit</button></center> 
                       <center><button class="closemod" onclick="closemodal('storyLay')" type="button">Close</button></center>
                   </div></center>    
@@ -369,7 +369,7 @@
  <center><div class="modal-content">
       <p><strong>Register for Caption Writing</strong></p>
       <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
-      <input type="pin" id="pin" placeholder="pin"> <br>
+      <input type="password" id="pin" placeholder="pin"> <br>
       <center><button class="closemod" type="button" onclick="foo('captionIt','solo','lit')" style="margin-bottom: 5px;">Submit</button></center> 
       <center><button class="closemod" onclick="closemodal('captionIt')" type="button">Close</button></center>
   </div></center>    
@@ -429,7 +429,7 @@
       <input type="number" max="2" id="teamNumber" placeholder="Team Size"> <br>
       <input type="text" id="teamName" placeholder="Team Name"> <br>
       <input type="FlairID" id="flairId" placeholder="FlairID"> <br>
-      <input type="pin" id="pin" placeholder="pin"> <br>
+      <input type="password" id="pin" placeholder="pin"> <br>
       <center><button class="closemod" type="button" onclick="foo('downTheMemoryLane','team','lit')" style="margin-bottom: 5px;">Submit</button></center> 
       <center><button class="closemod" onclick="closemodal('downTheMemoryLane')" type="button">Close</button></center>
   </div></center>    
@@ -542,6 +542,24 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
 
             function openmod(str){
                 var modal = document.getElementById(str);
+                var card = modal.getElementsByClassName('modal-content')[0];
+                var collection = card.getElementsByTagName('input');
+                if(collection.length != 0){
+                    var collection = modal.getElementsByTagName('input');
+                    if(collection.length == 4){
+                        collection[0].placeholder = "Team Size";
+                        collection[1].placeholder = "Team Name";
+                        collection[2].placeholder = "Flair Id";
+                        collection[3].placeholder = "Pin";
+                        for(var i = 0;i<collection.length;i++)
+                            collection[i].value = "";
+                    }else{
+                        collection[0].placeholder = "Flair Id";
+                        collection[1].placeholder = "Pin";
+                        for(var i = 0;i<collection.length;i++)
+                            collection[i].value = "";
+                    }
+                }
                 modal.style.display = "block";
             }
             

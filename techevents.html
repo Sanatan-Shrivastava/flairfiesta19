@@ -161,7 +161,7 @@
                        <center><div class="modal-content">
                             <strong>Register for Code-Wars</strong>
                             <input type="FlairID" placeholder="FlairID"> <br>
-                            <input type="pin" placeholder="pin"> <br>
+                            <input type="password" placeholder="pin"> <br>
                             <center><button class="closemod" onclick="foo('codeWars','solo','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                             <center><button class="closemod" onclick="closemodal('codeWars')" type="button">Close</button></center>
                         </div></center>    
@@ -237,7 +237,7 @@ text used in the website. <br>
                                     <input type="number" min="0" max="3" placeholder="Team Size"> <br>
                                     <input type="text"  placeholder="Team Name"> <br>
                                     <input type="FlairID" placeholder="FlairID"> <br>
-                                    <input type="pin" placeholder="pin"> <br>
+                                    <input type="password" placeholder="pin"> <br>
                                     <center><button class="closemod" onclick="foo('webTags','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                                     <center><button class="closemod" onclick="closemodal('webTags')" type="button">Close</button></center>
                                 </div></center>    
@@ -308,7 +308,7 @@ text used in the website. <br>
                       <input type="number" min="0" max="2" placeholder="Team Size"> <br>
                       <input type="text"  placeholder="Team Name"> <br>
                       <input type="FlairID" placeholder="FlairID"> <br>
-                      <input type="pin" placeholder="pin"> <br>
+                      <input type="password" placeholder="pin"> <br>
                       <center><button class="closemod" onclick="foo('connectTheDots','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
                       <center><button class="closemod" onclick="closemodal('connectTheDots')" type="button">Close</button></center>
                   </div></center>    
@@ -398,7 +398,7 @@ Further details of this round will be provided in the question paper.
       <input type="number" min="0" max="2" placeholder="Team Size"> <br>
       <input type="text"  placeholder="Team Name"> <br>
       <input type="FlairID" placeholder="FlairID"> <br>
-      <input type="pin" placeholder="pin"> <br>
+      <input type="password" placeholder="pin"> <br>
       <center><button class="closemod" onclick="foo('readBtwLines','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
       <center><button class="closemod" onclick="closemodal('readBtwLines')" type="button">Close</button></center>
   </div></center>    
@@ -460,7 +460,7 @@ Further details of this round will be provided in the question paper.
  <center><div class="modal-content">
       <p><strong>Register for DataHulk</strong></p>
       <input type="FlairID" placeholder="FlairID"> <br>
-      <input type="pin" placeholder="pin"> <br>
+      <input type="password" placeholder="pin"> <br>
       <center><button class="closemod" onclick="foo('dataHulk','solo','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
       <center><button class="closemod" onclick="closemodal('dataHulk')" type="button">Close</button></center>
   </div></center>    
@@ -536,7 +536,7 @@ as per their requirement for that 2 test rounds will be allowed to be played for
 <input type="number" min="0" max="2" placeholder="Team Size"> <br>
 <input type="text"  placeholder="Team Name"> <br>
 <input type="FlairID" placeholder="FlairID"> <br>
-<input type="pin" placeholder="pin"> <br>
+<input type="password" placeholder="pin"> <br>
 <center><button class="closemod" onclick="foo('CS_GO','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
 <center><button class="closemod" onclick="closemodal('CS_GO')" type="button">Close</button></center>
 </div></center>    
@@ -596,7 +596,7 @@ as per their requirement for that 2 test rounds will be allowed to be played for
 <input type="number" min="0" max="2" placeholder="Team Size"> <br>
 <input type="text"  placeholder="Team Name"> <br>
 <input type="FlairID" placeholder="FlairID"> <br>
-<input type="pin" placeholder="pin"> <br>
+<input type="password" placeholder="pin"> <br>
 <center><button class="closemod" onclick="foo('pubg','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
 <center><button class="closemod" onclick="closemodal('pubg')" type="button">Close</button></center>
 </div></center>    
@@ -656,7 +656,7 @@ be disqualified, and In case of disqualification entry fees will not be refunded
 <input type="number" min="0" max="5" placeholder="Team Size"> <br>
 <input type="text"  placeholder="Team Name"> <br>
 <input type="FlairID" placeholder="FlairID"> <br>
-<input type="pin" placeholder="pin"> <br>
+<input type="password" placeholder="pin"> <br>
 <center><button class="closemod" onclick="foo('miniMilitia','team','tech')" type="button" style="margin-bottom: 5px;">Submit</button></center> 
 <center><button class="closemod" onclick="closemodal('miniMilitia')" type="button">Close</button></center>
 </div></center>    
@@ -766,6 +766,24 @@ For further details visit https://www.flairfiesta.in. For enquries and informati
 
             function openmod(str){
                 var modal = document.getElementById(str);
+                var card = modal.getElementsByClassName('modal-content')[0];
+                var collection = card.getElementsByTagName('input');
+                if(collection.length != 0){
+                    var collection = modal.getElementsByTagName('input');
+                    if(collection.length == 4){
+                        collection[0].placeholder = "Team Size";
+                        collection[1].placeholder = "Team Name";
+                        collection[2].placeholder = "Flair Id";
+                        collection[3].placeholder = "Pin";
+                        for(var i = 0;i<collection.length;i++)
+                            collection[i].value = "";
+                    }else{
+                        collection[0].placeholder = "Flair Id";
+                        collection[1].placeholder = "Pin";
+                        for(var i = 0;i<collection.length;i++)
+                            collection[i].value = "";
+                    }
+                }
                 modal.style.display = "block";
             }
             

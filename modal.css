@@ -42,6 +42,16 @@
     transition: all 300ms ease-in-out;
 }
 
+.activeClosemod{
+  color: white;
+  width: 80px;
+  font-size: 15px;
+  background-color: gray;
+  border-color: none;
+  border-radius: 50px;
+  outline: none;
+}
+
 .closemod:active{
     outline: none;
 }
