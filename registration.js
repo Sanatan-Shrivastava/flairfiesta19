@@ -183,7 +183,8 @@
     if(!alreadyRegistered){
         h1.textContent = "Welcome to FlairFiesta 2019 " + questions[0].value + ' !\n' ;
         h1.textContent += "Your Flair Id is "+ flairId ;
-        window.alert("Mail Successfully sent, Incase you didn't recieve mail, Please Check your spam folder.");
+        setTimeout(function(){ window.alert("Mail Successfully sent, Incase you didn't recieve mail, Please Check your spam folder and make sure to mark us NOT SPAM."); }, 3000);
+        
     }else{
       h1.textContent = "You have already registered " + questions[0].value + ' !';
     }
