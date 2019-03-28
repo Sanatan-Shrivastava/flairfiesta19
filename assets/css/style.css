@@ -13,17 +13,16 @@ h1 {
   transition: .8s ease-in-out;
 }
 
-@media(width: 767px){
-  h1{
+  p.Welcome{
+    font-size: 20px;
   position: relative;
   color: #fff;
   opacity: 0;
   transition: .8s ease-in-out;
-  margin-left: 2em;
-  margin-right: 2em;
+  max-width: 90%;
   }
 
-}
+
 #progress {
   position: absolute;
   background:rgba(233,139,43);

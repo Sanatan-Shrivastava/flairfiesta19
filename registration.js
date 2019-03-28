@@ -177,11 +177,12 @@
     register.className = 'close'
     
     // add the h1 at the end with the welcome text
-    var h1 = document.createElement('h1')
+    var h1 = document.createElement('p');
+    h1.className = "Welcome";
     h1.setAttribute('style', 'white-space: pre;');
     
     if(!alreadyRegistered){
-        h1.textContent = "Welcome to FlairFiesta 2019 " + questions[0].value + ' !\n' ;
+        h1.textContent = "Welcome to FlairFiesta " + questions[0].value + ' !\n' ;
         h1.textContent += "Your Flair Id is "+ flairId ;
     }else{
       h1.textContent = "You have already registered " + questions[0].value + ' !';
