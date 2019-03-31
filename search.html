@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+    <script src="forgetFlairId.js"></script>
+    <link rel="stylesheet" href="modal.css">
    
 </head>
 <body>
@@ -151,17 +156,18 @@
             <div class="col-md-6 col-12">
                 <div class="contact_form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="College ID">
+                        <input type="text" id="collegeId" class="form-control" placeholder="College ID">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Pin">
+                        <input type="password" id="pin" class="form-control" placeholder="Pin">
                     </div>
-                    <div class="form-group text-right">
-                        <button class="btn btn-rounded btn-primary">Submit</button>
-                    </div>
-                    <div class="form-group text-right">
-                            <button class="btn btn-rounded btn-primary">forgot pin</button>
-                        </div>
+                    <p id="Message"></p>
+                    <span class="form-group text-right">
+                        <button id="submitForm" onclick="forgetFid()" class="btn btn-rounded btn-primary">Submit</button>
+                    </span>
+                    <span class="form-group text-right">
+                            <button onclick="forgetPin()" class="btn btn-rounded btn-primary">forgot pin</button>
+                    </span>
                 </div>
             </div>
 
