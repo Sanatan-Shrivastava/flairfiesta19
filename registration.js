@@ -184,7 +184,7 @@
     if(!alreadyRegistered){
         h1.textContent = "Welcome to FlairFiesta " + questions[0].value + ' !\n' ;
         h1.textContent += "Your Flair Id is "+ flairId ;
-        setTimeout(function(){ window.alert("Mail Successfully sent, Incase you didn't recieve mail within sometime, Please Check your spam folder and make sure to mark us NOT SPAM."); }, 3000);
+        // setTimeout(function(){ window.alert("Mail Successfully sent, Incase you didn't recieve mail within sometime, Please Check your spam folder and make sure to mark us NOT SPAM."); }, 3000);
         
     }else{
       h1.textContent = "You have already registered " + questions[0].value + ' !';
