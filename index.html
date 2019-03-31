@@ -13,6 +13,7 @@
 <!-- Chrome, Firefox OS, Opera and Vivaldi --><meta name="theme-color" content="#000000">
 <!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#000000">
 <!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!--     Fonts and icons     -->
     <!-- ========== Title ========== -->
     <title>FlairFiesta'19|Annual socio-cultural fest, IIITK</title>
@@ -67,10 +68,8 @@
                 <li class="nav-item">
                      <a onclick="alert('Coming Soon');" class="nav-link" href="#">Timeline</a>
                 </li>
-                <li class="search_btn">
-                    <a  href="#">
-                       <i class="ion-ios-search"></i>
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html">Search-flairID</a>
                 </li>
             </ul>
         </div>
@@ -93,9 +92,16 @@
                             <p class="cover-date">
                                 
                             </p>
-                            <button onclick="window.alert('Releasing soon');" type="button" style="background-color: #03142E; color: white; border: #03142E; border-radius: 50px; outline: none;" data-toggle="modal" data-src="https://player.vimeo.com/video/58385453?badge=0" data-target="#myModal">
-                                Play Teaser
-                              </button> <br> <br>
+                              <button class=" btn btn-primary btn-rounded" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Teaser</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vuhgHED13Xs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div> <br> <br>
                             <a href="register.html" class=" btn btn-primary btn-rounded">
                                 Register Yourself
                             </a>
@@ -512,6 +518,9 @@ So just don't wait there and sit , give yourself this wonderful opportunity to g
                                     <a href=https://www.facebook.com/iiitkfd><i class="ion-social-facebook"></i></a>
                                 </li>
                                 <li>
+                                    <a href="https://www.youtube.com/channel/UCMCRBf_FRiX3voeuSYlNw_g?view_as=subscriber"><i class="ion-social-youtube"></i></a>
+                                </li>
+                                <li>
                                     <a href="https://www.instagram.com/flairfiesta/"><i class="ion-social-instagram"></i></a>
                                 </li>
                             </ul></center>
@@ -591,6 +600,27 @@ So just don't wait there and sit , give yourself this wonderful opportunity to g
                 
                 
                 </script>
+
+                <script>
+                //jQuery
+// Bootstrap4 js
+
+$(document).ready(function () {
+    autoPlayYouTubeModal();
+});
+
+function autoPlayYouTubeModal() {
+        var trigger = $('.videoModalTriger');
+    trigger.click(function () {
+        var theModal = $(this).data("target");
+        var videoSRC = $(this).attr("data-videoModal");
+        var videoSRCauto = videoSRC + "?autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal).on('hidden.bs.modal', function (e) {
+            $(theModal + ' iframe').attr('src', '');
+        });
+    });
+};</script>
     <!--footer end -->
     <script src="registration.js"></script>
     
