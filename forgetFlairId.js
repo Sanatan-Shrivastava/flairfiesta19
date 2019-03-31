@@ -13,6 +13,7 @@ function forgetFid(){
     if(collegeId === "" && (!pin.match(/^[1-9]\d{3}$/) || pin === "")){
         // window.alert('Invalid College Id and Pin');
         Message.innerHTML = 'Invalid College Id and Pin';
+        document.getElementById('pin').value = "";
         validUser = false;
     }else if(collegeId === ""){
         // window.alert('Invalid College Id');
@@ -21,6 +22,7 @@ function forgetFid(){
     }else if(!pin.match(/^[1-9]\d{3}$/) || pin === ""){
         // window.alert('Invalid Pin');
         Message.innerHTML = 'Invalid Pin';
+        document.getElementById('pin').value = "";
         validUser = false;
     }
 
@@ -52,10 +54,13 @@ function forgetFid(){
                     Message.innerHTML = "Hello "+firstname+',\n'+"Your Flair Id is: "+flairId+" \n";
                     button.disabled = false;
                     button.className = "btn btn-rounded btn-primary";
+                    document.getElementById('collegeId').value ="";
+                    document.getElementById('pin').value = "";
                 }else{
                     Message.textContent = "Pin Not Matched";
                     button.disabled = false;
                     button.className = "btn btn-rounded btn-primary";
+                    document.getElementById('pin').value = "";
                 }
                 // window.alert();
             }); 
