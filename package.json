@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Sanatan-Shrivastava/FlairFiesta-19#readme",
   "devDependencies": {
     "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1"
   }
 }
