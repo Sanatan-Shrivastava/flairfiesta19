@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="teaser.css">
    
 </head>
 <body> 
@@ -62,9 +63,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="events.html">Events</a>
                 </li>
-                <!-- <li class="nav-item"> -->
-                    <!-- <a class="nav-link " href="#">News</a> -->
-                <!-- </li> -->
                 <li class="nav-item">
                      <a onclick="alert('Coming Soon');" class="nav-link" href="#">Timeline</a>
                 </li>
@@ -89,19 +87,15 @@
                                 IIIT Kota's
                             </h2>
                             <strong class="cover-xl-text">FlairFiesta</strong><hr color="black">
-                            <p class="cover-date">
-                                
-                            </p>
-                              <button class=" btn btn-primary btn-rounded" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Teaser</button>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vuhgHED13Xs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div> <br> <br>
+                            <p class="cover-date"></p>
+                           
+                            <!-- teaser -->
+                            <a href="https://www.youtube.com/embed/vuhgHED13Xs" class=" btn btn-primary btn-rounded">
+                                    Teaser
+                                </a> 
+                            <!-- teaser end -->
+                            
+                            <br> <br>
                             <a href="register.html" class=" btn btn-primary btn-rounded">
                                 Register Yourself
                             </a>
@@ -601,26 +595,36 @@ So just don't wait there and sit , give yourself this wonderful opportunity to g
                 
                 </script>
 
+                <!-- teaser  -->
                 <script>
-                //jQuery
-// Bootstrap4 js
+                
+// Get the modal
+var modal = document.getElementById('myModal');
 
-$(document).ready(function () {
-    autoPlayYouTubeModal();
-});
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-function autoPlayYouTubeModal() {
-        var trigger = $('.videoModalTriger');
-    trigger.click(function () {
-        var theModal = $(this).data("target");
-        var videoSRC = $(this).attr("data-videoModal");
-        var videoSRCauto = videoSRC + "?autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal).on('hidden.bs.modal', function (e) {
-            $(theModal + ' iframe').attr('src', '');
-        });
-    });
-};</script>
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
     <!--footer end -->
     <script src="registration.js"></script>
     
