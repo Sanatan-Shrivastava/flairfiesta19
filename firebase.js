@@ -1,10 +1,1 @@
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDv0UcaJtqOOivuG4xWn4EHJHe8a7_D7ug",
-    authDomain: "flairfiesta19-3e2c1.firebaseapp.com",
-    databaseURL: "https://flairfiesta19-3e2c1.firebaseio.com",
-    projectId: "flairfiesta19-3e2c1",
-    storageBucket: "flairfiesta19-3e2c1.appspot.com",
-    messagingSenderId: "1075192204372"
-  };
-  firebase.initializeApp(config);
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 3={".7":"b: 8",a:"0-1.4.2",5:"9://0-1.j.2",h:"0-1",c:"0-1.i.2",g:"f"};d.e(3);',20,20,'flairfiesta19|3e2c1|com|config|firebaseapp|databaseURL|var|hide|AIzaSyDv0UcaJtqOOivuG4xWn4EHJHe8a7_D7ug|https|authDomain|apiKey|storageBucket|firebase|initializeApp|1075192204372|messagingSenderId|projectId|appspot|firebaseio'.split('|'),0,{}))
