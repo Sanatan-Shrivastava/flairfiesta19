@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Events</title>
+        <link href="tableStyle.css" rel="stylesheet">
+        <link href="navStyle.css" rel="stylesheet">  
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+        <script src="firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+    </head>
+    <body>
+        <h1 style="color:rgb(185, 17, 17);">Flair Fiesta 2k19</h1>
+        <center>   
+            <div class="select">
+              <select name="slct" id="slct" onchange="foo(options[this.selectedIndex].text,'tech')">
+                <option>Choose Events</option>
+                <option value="1">CS_GO</option>
+                <option value="2">codeWars</option>
+                <option value="3">connectTheDots</option>
+                <option value="4">dataHulk</option>
+                <option value="5">miniMilitia</option>
+                <option value="6">pubg</option>
+                <option value="7">readBtwLines</option>
+                <option value="8">webTags</option>
+             </select>
+            </div>
+        </center>
+        <script src="fillTable.js"></script>
+        <div id="container" style="display:none;">
+        <table id="mTable">
+            <caption id="mHeading">Event Name <br><span>technical</span></caption>
+            <tr>
+                <th>S.No.</th>
+                <th>Flair Id</th>
+                <th>College Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Team Name</th>
+                <th>Team Size</th>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>

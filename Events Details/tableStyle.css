@@ -1,0 +1,89 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 1.75vw;
+}
+
+body {
+	padding: 2rem;
+	font: normal 1rem/1.25 Verdana, sans-serif;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	background-color: floralwhite;
+	color: #333;
+}
+
+@media screen and (max-width : 480px) {
+	body {
+		font-size:  1.5rem;
+	}
+}
+
+table {
+	display: flex;
+	flex-flow: column nowrap;
+    line-height: 1.25;
+	border: 0;
+}
+
+caption {
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: 900;
+	color: #999;
+	caption-side: top;
+}
+
+caption span {
+	font-size: 1.25rem;
+	font-weight: 300;
+	color: #A52A2A;
+}
+
+tr {
+	display: flex;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #E5E5E5;
+}
+
+th {
+	font-weight: 700;
+	background-color: #f2f2f2;
+	color: #666;
+}
+
+th,
+td {
+	display: flex;
+	flex: 1 0;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem 0.1rem;
+	border: 1px solid #BFBFBF;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* This will affect only Chrome browsers 29+
+	* See: http://browserhacks.com/
+	* Hack because 'hyphens: auto;' is supported in Chrome only on Android & Mac 
+	* and word-break 'overrides' hyphens in Firefox
+	*/
+.selector:not(*:root), th, td {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	word-break: break-all;
+}
+
+/* Breaking the numbers! */
+.numbers {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	word-break: break-all;
+}
